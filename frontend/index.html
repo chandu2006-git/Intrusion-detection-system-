@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDS Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="header">
+
+            <h1>🛡️ Intrusion Detection System</h1>
+
+            <p>
+                Real-Time Network Traffic Monitoring & Threat Detection
+            </p>
+
+            <p id="refreshStatus">
+                🟢 Live Updating Every 2 Seconds
+            </p>
+
+        </header>
+
+        <!-- ================= TOP METRICS ================= -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <h3>Active Flows</h3>
+                <h2 id="activeFlows">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <h3>Packets / Sec</h3>
+                <h2 id="pps">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <h3>Bytes / Sec</h3>
+                <h2 id="bps">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Alerts</h3>
+                <h2 id="alertCount">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <h3>Current Status</h3>
+                <h2 id="currentStatus">Normal</h2>
+            </div>
+
+        </section>
+
+        <!-- ================= GRAPHS ================= -->
+
+        <section class="graphs-section">
+
+            <div class="graph-large">
+
+                <h3>📈 Network Traffic Trend</h3>
+
+                <canvas id="trafficChart"></canvas>
+
+            </div>
+
+            <div class="graph-small">
+
+                <h3>🚨 Alert Activity</h3>
+
+                <canvas id="alertChart"></canvas>
+
+            </div>
+
+        </section>
+
+        <!-- ================= LIVE DETECTION FEED ================= -->
+
+        <section class="feed-section">
+
+            <h3>🚨 Live Detection Feed</h3>
+
+            <div id="detectionFeed" class="feed-box">
+
+                <div class="feed-item">
+                    Waiting for detections...
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= RECENT NETWORK ACTIVITY ================= -->
+
+        <section class="table-section">
+
+            <h3>📡 Recent Network Activity</h3>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Time</th>
+                        <th>Source IP</th>
+                        <th>Destination IP</th>
+                        <th>Protocol</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="flowTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer class="footer">
+
+            IDS Hybrid Detection Engine
+
+            <br>
+
+            Random Forest • XGBoost • Autoencoder
+
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

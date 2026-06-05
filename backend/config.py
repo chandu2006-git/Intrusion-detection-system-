@@ -1,0 +1,2 @@
+FLOW_TIMEOUT = 3  # seconds
+MAX_FLOWS = 5000
